@@ -1,0 +1,82 @@
+ <!-- //login form and profile -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login/Signup Page</title>
+	<link rel="stylesheet"   href="/style/book.css">
+    
+</head>
+<body>
+    <div class ="book" method="post"> 
+      <div>
+        <a href="/htmlfiles/mess_savings.ejs" class="back-button">LOG OUT </a>
+
+       </div>
+        <div class ="profile">
+                <!-- <h3>NAME :</h3>
+                <h3>ROLL NO :</h3>
+                <h3>POINTS REMAINING:</h3> -->
+                <ul style="list-style: none;
+                            padding: 0;
+                            margin: 0;">
+                    <% users.forEach(function(results) { %>
+                      <li>
+                        <%console.log(results)%>
+                        <span><h5>NAME :</h5><%= results.studentName %></span>
+                        <span><h5>ROLL NO :</h5><%= results.rollno %></span>
+                        <span id="poi" class="points"><h5>POINTS REMAINING:</h5><%= results.points %></span>
+                        <span id="poi" class="points"><h5>AMOUNT REMAINING:</h5><%= results.points*114 %></span>
+                        <span id="poi" class="points"><h5>LAST USED DATE:</h5><%= results.date %></span>
+
+
+
+                      </li>
+                      <input id="rollno-input" type="hidden" value="<%= results.rollno %>" >
+
+                    <% }); %>
+                  </ul>
+                  
+                  <!-- <form method="post" action="/usePoint">
+                    <% users.forEach(function(results) { %>
+                       
+                    <input type="hidden" value="<%= results %>" >
+                    <span><h4>ROLL NO :</h4>"<%= results.rollno %>"</span>
+
+                    <% }); %> -->
+                    <button id="but" type="submit">Use Point</button>
+
+                  <!-- </form> -->
+                  <%if(message=== "Today's point is already in use"){%>
+                    <% console.log(message) %>
+                   <li><span><h4>ALERT :Today's point is already in use </h4></span></li> 
+                    
+                  <% }%>
+                  </div>
+    </div>
+    <script>
+        // add event listener to the button
+        document.getElementById("but").addEventListener("click", () => {
+          // get the rollno value from the hidden input field
+          const rollno = document.getElementById("rollno-input").value;
+            console.log(rollno);
+          // send a POST request to the server to update the points
+          fetch("/usePoint", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ rollno: rollno })
+          })
+          .then(response => response.json())
+          .then(data => {
+            console.log(data.message); // output a message from the server
+          })
+          .then(window.location.reload())
+          .catch(error => {
+            console.log( error);
+          });
+        });
+
+      </script>
+</body>
+</html>

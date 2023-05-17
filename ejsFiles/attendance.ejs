@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Attendance</title>
+	<link rel="stylesheet" href="/style/attendance.css">
+</head>
+<body >
+	<h1>Mark Your Attendance</h1>
+	<form action="/present" method="post">
+		<label for="rollno">Roll Number:</label>
+		<input type="text"  name="rollno" placeholder="Rollno" required>
+		<br>
+		<label for="attendance">Attendance:</label>
+		<input type="radio" id="yes" name="attendance" value="yes" required>
+		<label for="yes">Yes</label>
+		<input type="radio" id="no" name="attendance" value="no" required>
+		<label for="no">No</label>
+		<br>
+		<input type="submit" value="Submit">
+	</form>
+</body>
+</html>

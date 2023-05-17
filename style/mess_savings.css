@@ -1,0 +1,77 @@
+.navbar{
+    background: rgb(128, 224, 224);
+    display: flex;
+    justify-content: space-between;
+    padding-left:50px;
+    padding-right:50px;
+}
+.menubar{
+    display:flex;
+    justify-content: space-around;
+    gap:15px;
+    color: rgb(5, 5, 5);
+    list-style: none;
+    padding-top: 25px;
+    padding-bottom: 15px;
+}
+.menubar li a{
+    padding-left: 10px;
+    padding-right: 10px;
+    text-decoration: none;
+    font-size: large;
+}
+.menubar li :hover{
+    background:white;
+    padding-top:10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+ }
+.navbar div{
+    display: flex;
+    flex-direction:row ;
+    gap: 10px;
+}
+.navbar div img{
+    width: 100px;
+}
+.four-templates{
+    display: flex;
+    justify-content: space-around;
+}
+.fd{
+    margin-top:150px;
+    /* border:1px solid black; */
+    width:300px;
+    text-align:center;
+    padding-top: 10px;
+    padding-bottom:20px;
+    background: rgb(253, 252, 252);
+    box-shadow: 0 0 10px rgb(26, 78, 78);
+}
+.fd img{
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 20px;
+    width:200px;
+    display: block;
+}
+ 
+.btn{
+    text-decoration: none;
+    text-transform: uppercase;
+    border-style: none;
+    color:#2196f3;
+    padding:15px 30px;
+    letter-spacing: 2px;
+    font-size: 15px;
+    border-radius:5px;
+    background-color: transparent;
+    border: 2px solid #060005;
+    transition: all .15s ease-in-out;
+    
+  }
+  .btn:hover {
+    box-shadow: 0 0 10px 0 #03ec4d inset, 0 0 20px 2px  #03ec4d;
+    border: 3px solid #03ec4d;
+  }

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Feedback Ratings</title>
+    <link rel = "stylesheet" href = "/style/admin.css">
+
+   </head>
+  <body>
+    <div class="feedback">
+        <a href="/htmlfiles/Home_page.ejs" class="back-button">Back</a>
+        <div class="tab">
+        <h1>Feedback Ratings</h1>
+        <table>
+        <thead>
+            <tr>
+            <th>Rating</th>
+            <th>   Count</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% data.forEach(result => { %>
+            <tr>
+                <td><%= result.rating %></td>
+                <td><%= result.count %></td>
+            </tr>
+            <% }) %>
+        </tbody>
+        </table>
+      </div>
+      <div class="attendance">
+           
+            
+              <h3>number of students attending mess tomorrow :  <%=data1[0].count %></h3>
+    
+      </div>
+</div>
+  </body>
+</html>
